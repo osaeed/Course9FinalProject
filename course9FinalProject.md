@@ -1,0 +1,48 @@
+Simulations of Exponential Distribution
+========================================================
+author: Omer Saeed
+date: 3/8/2020
+autosize: true
+
+Course 9 Final Project
+
+Introduction
+========================================================
+
+The Central Limit Theorem states that when independent normal variables are added, their sum tends towards a normal distribution, even if the original distribution is not normal.  <br><br>We will build a Shiny app to show how this applies to the means of an exponential distribution.  According to the Central Limit Theorem, sample mean should follow a normal distribution centered at the population mean, which is 1 / Lambda for this distribution.
+
+
+Exponential Simulation
+========================================================
+The simulation is done with by building of vector of sample means.  Each sample is drawn from the exponential distribution.  The example runs 1000 samples of size 40 with lambda = 0.2.
+
+```r
+lambda <- 0.2
+numSamples <- 1000
+sampleSize = 40
+
+for (i in 1:numSamples) {
+     samp <- rexp(sampleSize, rate=lambda)
+     mns = c(mns, mean(samp))
+}
+```
+
+Histogram of Sample Means
+========================================================
+We can then plot a histogram of our sample means and observe it follows a normal distribution.
+![plot of chunk unnamed-chunk-2](course9FinalProject-figure/unnamed-chunk-2-1.png)
+
+
+Shiny App
+========================================================
+We built a Shiny app with 3 parameters that will be specified by the user:
+
+- Lambda - The parameter for the exponential distribution.
+- Number of Samples - How many samples will be generated.  We will plot the mean of each sample.
+- Sample Size - The number of exponential observations in each sample. 
+
+The Shiny app can be found at: https://osaeed.shinyapps.io/course9Final/ <br>
+User Documentation can be found at: https://osaeed.github.io/Course9FinalProject/documentation.html
+
+
+
