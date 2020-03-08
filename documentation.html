@@ -3,6 +3,22 @@
 		<title>Documentation - Exponential Simulation Shiny App</title>
 	</head>
 	<body>
-		This is the documentation for the project.
+		<h1>Documentation for Exponential Distribution Simulation<h1>
+		<h4>Author: Omer Saeed<br>Date: 3/8/2020</h4>
+		<h2>Introduction</h2>
+		The Central Limit Theorem states that when independent normal variables are added, their sum tends towards a normal distribution, even if the original distribution is not normal.  <br><br>We will build a Shiny app to show how this applies to the means of an exponential distribution.  According to the Central Limit Theorem, sample mean should follow a normal distribution centered at the population mean, which is 1 / Lambda for this distribution.<br>
+		This Shiny app allows users to simulate the distribution of the means of the exponential distribution.
+		<h2> Usage</h2>
+		The user will specify 3 parameters using the sliders in the side panel<br>
+		<ul>
+			<li>Lambda - The parameter for the exponential distribution.</li>
+			<li>Number of Samples - How many samples will be generated.</li>
+			<li>Sample Size - The number of exponential observations in each sample.</li>
+		</ul>
+		After clicking "Submit", the simulation will run with the specified parameters, and a histogram of the sample means will be displayed.  You will also see the Population Mean (1 / lambda) and Simulation Mean (mean of each of the Sample Means) displayed under the Submit button.<br>
+		<img src=screenshot.jpg width=600px>
+		<h2>Resources</h2>
+		<a href=index.html>Click here</a> to view the pitch deck.<br>
+		<a href=shiny.html>Click here</a> to access the application.<br>
 	</body>
 </html>	
